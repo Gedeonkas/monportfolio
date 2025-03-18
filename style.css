@@ -1,0 +1,304 @@
+/* Styles globaux */
+body {
+    font-family:'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+	 background: #000000;
+    color: #333;
+}
+
+/* Header */
+header {
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: 	black;
+    z-index: 1000;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+	color: white; 
+    transition: transform 0.3s ease;
+	 display: flex; /* Utilise Flexbox pour aligner les items */
+    justify-content: left; 
+	padding: 0px 20px;
+}
+
+header h1:hover {
+    transform: scale(1.1); /* Zoom léger au survol */
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex; /* Utilise Flexbox pour aligner les items */
+    justify-content: right; /* Centre les liens */
+    margin: 0;
+    padding: 0px 20px;
+	right: 60px;
+	background: black;
+}
+
+/* Liens */
+nav ul li {
+    margin: 10 0px;
+}
+
+nav ul li a {
+    color: white; /* Texte blanc */
+    text-decoration: none;
+    font-weight: 100;
+    padding: 20px 15px;
+    border-radius: 0px; /* Coins arrondis */
+    transition: all 0.3s ease; /* Transition fluide pour les interactions */
+	 background: black; 
+}
+
+/* Style du menu actif */
+nav ul li a.active {
+    background-color: #00d4ff; /* Fond bleu clair */
+    color: #001f3f; /* Texte bleu marine */
+    font-weight: bold; /* Texte en gras */
+}
+
+/* Effets au survol */
+nav ul li a:hover {
+
+    color: white; /* Texte blanc au survol */
+}
+/* Cacher l'icône burger sur grand écran */
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+	color: white;
+    position: absolute;
+    top: 15px; /* Ajuste la hauteur */
+    right: 60px; /* Évite qu'il soit trop à droite */
+    z-index: 1100; /* S'assure qu'il est au-dessus du menu */
+}
+
+/* Menu responsive pour mobile */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Cache le menu par défaut */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: black;
+        width: 200px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-menu.active {
+        display: block; /* Affiche le menu lorsqu'il est activé */
+    }
+
+    .nav-menu ul {
+        display: flex;
+        flex-direction: column; /* Met le menu en colonne */
+        padding: 0;
+    }
+
+    .nav-menu ul li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block; /* Affiche l'icône burger */
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+    }
+}
+
+/* Sections */
+section {
+    padding: 30px;
+    margin: 1px;
+	text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+section:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre légère au survol */
+}
+
+/* Boutons */
+button, a {
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+	border: 0px solid #ccc;
+	font-weight: bold;
+	font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover, a:hover {
+    background: #0056b3; /* Couleur foncée au survol */
+    transform: scale(1.05); /* Zoom léger */
+}
+.container {
+    display: flex;
+    flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+    gap: 40px; /* Espacement entre les divs */
+}
+
+/* Conteneur commun pour les sections Accueil et À propos */
+.content-container {
+    display: flex;
+    align-items: center; /* Aligne verticalement les images et le texte */
+    justify-content: space-between; /* Espace entre le texte et l'image */
+    gap: 10px; /* Espacement entre les éléments */
+    flex-wrap: wrap; /* Permet d'adapter la disposition sur petits écrans */
+    margin-bottom: 20px;
+}
+
+/* Texte */
+.content-container .text {
+    flex: 1; /* Le texte prend l'espace disponible */
+    max-width: 65%; /* Limite la largeur du texte */
+}
+
+.content-container .text a {
+    display: inline-block; /* Pour les boutons ou liens */
+    margin-top: 10px;
+    background: #007bff;
+    color: white;
+    padding: 10px 40px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.content-container div {
+    
+    padding: 10px;
+    border: 0px solid #ddd;
+    flex: 1; /* Chaque div prend une portion égale de l'espace */
+    min-width: 450px; /* Assure une largeur minimale */
+	box-sizing: border-box;
+	transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Animation fluide */
+  
+}
+.content-container .text a:hover {
+    background: #0056b3; /* Couleur plus foncée au survol */
+}
+
+/* Images */
+.content-container .image {
+    flex: 1; /* L'image prend l'espace restant */
+    max-width: 35%; /* Limite la largeur des images */
+}
+
+.content-container .image img {
+    width: 100%; /* L'image s'adapte au conteneur */
+    border-radius: 8px; /* Coins arrondis pour un style élégant */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+}
+
+
+.container div {
+    background: #ffffff;
+    padding: 40px;
+    border: 1px solid #ddd;
+    flex: 1; /* Chaque div prend une portion égale de l'espace */
+    min-width: 200px; /* Assure une largeur minimale */
+	 box-sizing: border-box;
+	 transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Animation fluide */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre subtile */
+}
+
+/* Media query pour les écrans de moins de 768px */
+@media (max-width: 768px) {
+    .container div {
+        flex: 0 0 100%; /* Chaque div occupe 100% de la largeur */
+    }
+	.content-container div {
+        flex: 0 0 100%; /* Chaque div occupe 100% de la largeur */
+    }
+}
+
+/* Effet hover sur les divs */
+.container div:hover {
+    transform: scale(1.05); /* Zoom léger */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Ombre dynamique */
+    background: #f0f8ff; /* Couleur de fond légèrement bleutée au survol */
+    cursor: pointer;
+}
+ul {
+    text-align: left; /* Aligne le texte à gauche */
+    padding: 15; /* Ajuste le padding pour une meilleure présentation */
+    margin: 0; /* Supprime les marges externes */
+}
+
+ul li {
+    margin: 5px 0; /* Ajoute un peu d'espacement entre les éléments */
+}
+
+
+.progress {
+    height: 100%;
+    background: #4caf50;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+
+
+/* Formulaire */
+form input, form textarea {
+    font-family:'Poppins', sans-serif;
+	width: 50%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+}
+
+form input:hover, form textarea:hover {
+    border-color: #007bff; /* Bordure bleue au survol */
+}
+
+form button {
+    background: blue;
+	 height: 60px;
+	 width: 160px;
+	 border: 1px solid #ccc;
+	 font-weight: bold;
+}
+
+form button:hover {
+    background: green;
+    transform: scale(1.1); /* Zoom au survol */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #001f3f;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+footer:hover {
+    color: #00d4ff; /* Couleur du texte change au survol */
+}
